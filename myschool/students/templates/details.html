@@ -1,0 +1,24 @@
+{% extends "mastertemplate.html" %}
+
+{% block title %}
+Add a new student details
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1>{{ thisstudent.rollnumber }} {{ thisstudent.name }} {{thisstudent.BloodGroup}} {{thisstudent.Class}}</h1>
+  
+<p>Roll Number: {{ thisstudent.rollnumber }}</p>
+<p>Student Name: {{ thisstudent.name }}</p>
+<p>BloodGroup :{{thisstudent.BloodGroup}}</p>
+<p>Class:{{thisstudent.Class}}</p>
+<a href="/update/{{ thisstudent.id }}">Update the entry</a></p>
+
+<a href="/deletesub/{{ thisstudent.id }}"> Delete this entry</a></p>
+
+<HR>
+<p>Back to <a href="/students">Student List</a></p>
+
+{% endblock %}

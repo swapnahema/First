@@ -1,0 +1,26 @@
+{% extends "mastertemplate.html" %}
+
+{% block title %}
+Add a new student details
+{% endblock %}
+
+
+{% block content %}
+<h1>Create a new Entry</h1>
+<h3 style="float: left; width: 30%; text_align:left">RollNumber</h3>
+<h3 style="float: right; width: 30%; text-align: left;">Class</h3>
+<h3 style="float:left; width:10%;  text_align:left;">Name</h3>
+<h3 style="float:left; width:30% ;text_align:left;">BloodGroup</h3>
+<form action="/createsub" method="post">
+    {% csrf_token %}
+<input type="text" name="rollnumber" id="rollnumber" value="{{ thisstudent.rollnumber }}">
+<input type="text" name="name" id="name" value="{{ thisstudent.name }}">
+<input type="text" name="BloodGroup" id="BloodGroup" value="{{thisstudent.BloodGroup}}">
+ <input type="text" name="Class" id="Class" value="{{thisstudent.Class}}">
+<input type="submit" value="Create">
+</form>
+
+<HR>
+<p>Back to <a href="/students">Student List</a></p>
+
+{% endblock %}
